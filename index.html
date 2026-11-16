@@ -48,7 +48,7 @@ nav.pill{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:10px
 .logo b{font-family:var(--font-display);font-weight:900;font-size:24px;letter-spacing:-.06em}
 .logo b span{color:var(--coral)}
 .logo small{font-family:var(--font-mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
-.views{display:flex;gap:2px;margin-left:auto}
+.views{display:flex;gap:2px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
 .views a{padding:9px 16px;border-radius:999px;text-decoration:none;font-weight:600;font-size:15px}
 .views a:hover{background:rgba(21,18,43,.06)}
 .views a.on{background:var(--ink);color:var(--paper)}
@@ -103,7 +103,7 @@ nav.pill{max-width:1240px;margin:0 auto;display:flex;align-items:center;gap:10px
 .dep-empty{padding:18px 26px;color:#9b97b8;font-family:var(--font-mono);font-size:13px;border-top:1px solid #23204a}
 
 /* section heads */
-.sec{padding:60px 0 30px}
+.sec{padding-top:60px;padding-bottom:30px}
 .sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
 .sec-head h2{font-size:clamp(38px,5vw,64px);margin-top:10px}
 
@@ -214,6 +214,84 @@ aside.filters{background:var(--paper);border:var(--b);border-radius:22px;positio
 .mv button:disabled{opacity:.3;cursor:default}
 .col .hint{font-family:var(--font-serif);font-style:italic;font-size:18px;color:#4a4664;padding:4px}
 
+
+/* scholarships — voucher cards */
+.sch-tabs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:20px}
+.ctab{display:flex;align-items:center;gap:16px;border:var(--b);border-radius:22px;padding:16px 20px;background:var(--paper);cursor:pointer;text-align:left;transition:transform .15s,box-shadow .15s}
+.ctab:hover{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
+.ctab.on{background:var(--cc);box-shadow:5px 5px 0 var(--ink)}
+.flag{width:54px;height:38px;border:var(--b);border-radius:8px;display:flex;overflow:hidden;flex:none}
+.flag i{flex:1}
+.flag.es{flex-direction:column}
+.ctab b{font-family:var(--font-display);font-weight:900;font-size:26px;letter-spacing:-.05em;display:block;line-height:1}
+.ctab small{font-family:var(--font-mono);font-size:12px;color:var(--ink);opacity:.75}
+.ctab .big{margin-left:auto;font-family:var(--font-mono);font-weight:700;font-size:34px}
+.sch-tools{display:grid;grid-template-columns:1fr 200px;gap:12px;margin-bottom:12px}
+.chiprow{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.fchip{font-family:var(--font-mono);font-size:12.5px;border:1.2px solid var(--ink);border-radius:999px;padding:5px 12px;background:var(--paper);cursor:pointer}
+.fchip.on{background:var(--ink);color:var(--paper)}
+.togs{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:18px;align-items:center}
+.togs label{display:flex;gap:8px;align-items:center;font-size:14.5px;cursor:pointer}
+.togs input{accent-color:var(--coral);width:15px;height:15px}
+.sch-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.voucher{background:var(--paper);border:var(--b);border-radius:22px;padding:8px;position:relative;cursor:default;transition:transform .15s,box-shadow .15s}
+.voucher:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.voucher.closed .v-in{opacity:.6}
+.v-in{border:1.5px dashed rgba(21,18,43,.35);border-radius:16px;padding:16px 18px 14px;display:flex;flex-direction:column;gap:9px;height:100%}
+.v-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.v-prov{font-family:var(--font-mono);font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.v-code{font-family:var(--font-mono);font-weight:700;font-size:12px;border:1.2px solid var(--ink);border-radius:6px;padding:1px 7px;background:var(--cc);flex:none}
+.voucher h3{font-family:var(--font-display);font-weight:800;letter-spacing:-.035em;font-size:20px;line-height:1.15;margin:0;text-wrap:balance}
+.v-amt{font-family:var(--font-serif);font-style:italic;font-size:24px;line-height:1.15;color:var(--coral)}
+.v-who{font-size:14px;color:#3a3655}
+.v-note{font-size:13.5px;color:var(--muted);border-left:3px solid var(--cc);padding-left:10px}
+.v-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px;border-top:1.5px dashed var(--line)}
+.v-st{font-family:var(--font-mono);font-size:12px;font-weight:700;padding:4px 10px;border-radius:999px;border:1.2px solid var(--ink)}
+.v-links{display:flex;gap:8px;align-items:center}
+.v-links a.src{font-family:var(--font-mono);font-size:11.5px;color:var(--muted)}
+.sch-note{font-family:var(--font-serif);font-style:italic;font-size:19px;color:var(--muted);margin:22px 0 0}
+@media (max-width:820px){.sch-grid{grid-template-columns:1fr}.sch-tabs{grid-template-columns:1fr}.sch-tools{grid-template-columns:1fr}}
+
+
+/* hackathons */
+.hackbtn{display:inline-flex;align-items:center;gap:8px;margin-left:auto;margin-right:6px;padding:6px 14px 6px 8px;border:var(--b);border-radius:999px;background:var(--sun);text-decoration:none;font-weight:800;font-size:14.5px;transition:transform .15s,box-shadow .15s;white-space:nowrap}
+.hackbtn:hover,.hackbtn.on{transform:translate(-1px,-1px);box-shadow:3px 3px 0 var(--ink)}
+.hackbtn.on{background:var(--mint)}
+.hackbtn svg{flex:none}
+.views{margin-left:0!important}
+.hk-hero{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:end;margin-bottom:22px}
+.next-up{background:var(--night);color:var(--cream);border-radius:22px;padding:18px 22px;min-width:300px;border:1.5px solid var(--ink);box-shadow:5px 5px 0 var(--coral)}
+.next-up .eyebrow{color:#a19dbd}
+.next-up b{display:block;font-family:var(--font-display);font-weight:900;letter-spacing:-.04em;font-size:22px;line-height:1.1;margin:6px 0}
+.next-up .cd{font-family:var(--font-mono);font-weight:700;font-size:34px;color:var(--mint);text-shadow:0 0 18px rgba(47,208,154,.5)}
+.hk-filters{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:22px}
+.hk-filters .sep{width:1px;height:22px;background:var(--line);margin:0 4px}
+.month{margin:26px 0 12px;display:flex;align-items:baseline;gap:12px}
+.month h3{font-family:var(--font-display);font-weight:900;letter-spacing:-.05em;font-size:30px;margin:0}
+.month h3 em{font-family:var(--font-serif);font-style:italic;font-weight:400;color:var(--coral)}
+.month span{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
+.hk-list{display:flex;flex-direction:column;gap:14px}
+.hk{display:grid;grid-template-columns:96px 1fr auto;gap:18px;align-items:stretch;background:var(--paper);border:var(--b);border-radius:20px;padding:14px;transition:transform .15s,box-shadow .15s}
+.hk:hover{transform:translate(-2px,-2px);box-shadow:5px 5px 0 var(--ink)}
+.hk.past{opacity:.6}
+.cal{border:var(--b);border-radius:14px;overflow:hidden;text-align:center;display:flex;flex-direction:column;background:var(--paper)}
+.cal .m{background:var(--coral);border-bottom:1.5px solid var(--ink);font-family:var(--font-mono);font-weight:700;font-size:12px;letter-spacing:.14em;padding:4px 0}
+.cal .d{font-family:var(--font-display);font-weight:900;font-size:34px;letter-spacing:-.05em;line-height:1;padding:8px 0 2px}
+.cal .r{font-family:var(--font-mono);font-size:10.5px;color:var(--muted);padding-bottom:6px}
+.cal.tbc .m{background:var(--lav)}
+.cal.tbc .d{font-family:var(--font-serif);font-style:italic;font-weight:400;font-size:26px;letter-spacing:0;padding:10px 4px 4px}
+.hk h4{font-family:var(--font-display);font-weight:800;letter-spacing:-.035em;font-size:19px;line-height:1.15;margin:2px 0 4px}
+.hk .org{font-size:14px;color:var(--muted)}
+.hk .meta{font-family:var(--font-mono);font-size:12px;color:var(--muted);margin-top:6px}
+.hk .note{font-size:13.5px;color:#3a3655;margin-top:8px}
+.hk-side{display:flex;flex-direction:column;align-items:flex-end;justify-content:space-between;gap:8px;min-width:150px}
+.when{font-family:var(--font-mono);font-weight:700;font-size:12px;padding:4px 10px;border-radius:999px;border:1.2px solid var(--ink);white-space:nowrap}
+.hk-side .src{font-family:var(--font-mono);font-size:11px;color:var(--muted)}
+details.past-box{margin-top:30px;border:1.5px dashed var(--line);border-radius:20px;padding:12px 16px}
+details.past-box summary{cursor:pointer;font-family:var(--font-mono);font-size:13px}
+details.past-box .hk-list{margin-top:12px}
+@media (max-width:820px){.hk-hero{grid-template-columns:1fr}.next-up{min-width:0}.hk{grid-template-columns:72px 1fr}.hk-side{grid-column:1/-1;flex-direction:row;align-items:center;min-width:0}.cal .d{font-size:26px}.hackbtn span{display:none}.hackbtn{padding:6px 8px}}
+
 /* build */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
 .step{border:var(--b);border-radius:22px;padding:20px;background:var(--paper);position:relative}
@@ -290,10 +368,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 <div class="navwrap">
   <nav class="pill" aria-label="Main">
     <a class="logo" href="#explore"><b>id<span>.</span></b><small>InternDub · Dublin</small></a>
+    <a class="hackbtn" href="#hackathons" data-view="hackathons" aria-label="Hackathons"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><rect x="3" y="6" width="26" height="17" rx="3" fill="#15122b"/><rect x="5.5" y="8.5" width="21" height="12" rx="1.5" fill="#2fd09a"/><path d="M12.5 11.5l-3 3 3 3M19.5 11.5l3 3-3 3M17.2 10.8l-2.4 7.4" stroke="#15122b" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M1.5 25.5h29l-2 2.5h-25z" fill="#15122b"/><circle cx="27" cy="5" r="4" fill="#ff5a45" stroke="#15122b" stroke-width="1.2"/></svg><span>Hackathons</span></a>
     <div class="views">
       <a href="#explore" data-view="explore">Explore</a>
       <a href="#swipe" data-view="swipe">Swipe</a>
       <a href="#tracker" data-view="tracker">Tracker<sup id="trackN"></sup></a>
+      <a href="#scholarships" data-view="scholarships">Scholarships</a>
       <a href="#build" data-view="build">The build</a>
     </div>
   </nav>
@@ -410,9 +490,45 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   <div class="board" id="board"></div>
 </section>
 
+
+<!-- SCHOLARSHIPS -->
+<section id="v-scholarships" class="sec wrap" hidden>
+  <div class="sec-head"><div><div class="eyebrow">06 — Funding</div><h2 class="h-big">Get it <em>funded.</em></h2></div>
+    <p style="max-width:44ch;color:var(--muted);margin:0">Scholarships, grants and bursaries in Ireland and Spain. Many open once a year, so closed ones show when the next round is expected.</p></div>
+  <div class="sch-tabs">
+    <button class="ctab" data-country="IE" style="--cc:#d9f5e8" type="button"><span class="flag"><i style="background:#169b62"></i><i style="background:#fff"></i><i style="background:#ff883e"></i></span><span><b>Ireland</b><small>Trinity, national & industry awards</small></span><span class="big" id="n-IE">–</span></button>
+    <button class="ctab" data-country="ES" style="--cc:#ffe9a8" type="button"><span class="flag es"><i style="background:#c60b1e"></i><i style="background:#ffc400;flex:2"></i><i style="background:#c60b1e"></i></span><span><b>España</b><small>Ministerio, fundaciones y bancos</small></span><span class="big" id="n-ES">–</span></button>
+  </div>
+  <div class="sch-tools">
+    <div class="f"><label for="sq">Search scholarships</label><input id="sq" type="search" placeholder="STEM, Erasmus, máster, Trinity…"></div>
+    <div class="f"><label for="slevel">Level</label><select id="slevel"><option value="">All levels</option><option value="Undergraduate">Undergraduate</option><option value="Postgraduate">Postgraduate</option></select></div>
+  </div>
+  <div class="chiprow" id="schCats"></div>
+  <div class="togs">
+    <label><input type="checkbox" id="sHide"> Hide closed rounds</label>
+    <label id="abroadWrap"><input type="checkbox" id="sAbroad"> Only ones I can use while studying outside Spain</label>
+    <span class="mono" style="font-size:12.5px;color:var(--muted)" id="sCount"></span>
+  </div>
+  <div class="sch-grid" id="schGrid"></div>
+  <p class="sch-note">Funding rules change every year. Always check the official call before applying.</p>
+</section>
+
+
+<!-- HACKATHONS -->
+<section id="v-hackathons" class="sec wrap" hidden>
+  <div class="hk-hero">
+    <div><div class="eyebrow">08 — Build weekends</div><h2 class="h-big" style="font-size:clamp(38px,5vw,64px);margin-top:10px">Hack the <em>island.</em></h2>
+      <p style="max-width:52ch;color:#2b2846;margin:14px 0 0;font-size:16.5px">Every hackathon I could find in Ireland: university events, company hack days, community AI builds and EU challenges. Confirmed dates come first; recurring events show when the next edition is expected.</p></div>
+    <div class="next-up" id="nextUp"></div>
+  </div>
+  <div class="hk-filters" id="hkFilters"></div>
+  <div id="hkBody"></div>
+  <p class="sch-note">Know one that's missing? Society Instagrams and Discords announce events late, so paste it in and it'll be added.</p>
+</section>
+
 <!-- BUILD -->
 <section id="v-build" class="sec wrap" hidden>
-  <div class="sec-head"><div><div class="eyebrow">06 — Behind the project</div><h2 class="h-big">How it <em>works.</em></h2></div>
+  <div class="sec-head"><div><div class="eyebrow">07 — Behind the project</div><h2 class="h-big">How it <em>works.</em></h2></div>
     <p style="max-width:52ch;color:#2b2846;margin:0;font-size:16.5px">Dublin internships are spread across dozens of boards and careers portals, each with its own deadlines and fine print. Most of my friends found roles after they'd closed, so I built one board that updates itself and tells you straight away if your year can apply.</p></div>
   <div class="steps">
     <div class="step" style="--c:var(--sun)"><div class="num">01</div><h4>Scan</h4><p>Every morning an AI agent searches LinkedIn, Indeed, gradireland, iAgora, The Inroad and company careers pages.</p></div>
@@ -611,8 +727,9 @@ function closeAll(){$("#drawer").classList.remove("open");$("#dbg").classList.re
 let view="explore";
 function route(){
   const h=(location.hash||"#explore").slice(1);
-  if(h==="list-top"){view="explore"}else view=["explore","swipe","tracker","build"].includes(h)?h:"explore";
-  ["explore","swipe","tracker","build"].forEach(v=>$("#v-"+v).hidden=v!==view);
+  if(h==="list-top"){view="explore"}else view=["explore","swipe","tracker","scholarships","hackathons","build"].includes(h)?h:"explore";
+  ["explore","swipe","tracker","scholarships","hackathons","build"].forEach(v=>$("#v-"+v).hidden=v!==view);
+  $(".hackbtn").classList.toggle("on",view==="hackathons");
   document.querySelectorAll(".views a").forEach(a=>a.classList.toggle("on",a.dataset.view===view));
   refresh(true);
   if(h==="list-top")$("#list-top").scrollIntoView();else if(view!=="explore")scrollTo(0,0);
@@ -622,6 +739,8 @@ function refresh(full){
   if(view==="explore"){renderList();renderDeps()}
   if(view==="swipe")renderDeck();
   if(view==="tracker")renderBoard();
+  if(view==="scholarships")renderSch();
+  if(view==="hackathons")renderHack();
 }
 
 document.addEventListener("click",ev=>{
@@ -650,6 +769,117 @@ $("#openFilters").addEventListener("click",()=>{$("#filters").classList.add("ope
 $("#clear").addEventListener("click",()=>{["field","type","area","source","company"].forEach(k=>st[k].clear());Object.assign(st,{q:"",posted:"",quick:"",eligOnly:false,hideClosed:true});$("#q").value="";$("#eligOnly").checked=false;$("#hideClosed").checked=true;document.querySelector('input[name="posted"][value=""]').checked=true;refresh()});
 $("#sw-skip").onclick=()=>swipe(-1);$("#sw-save").onclick=()=>swipe(1);$("#sw-open").onclick=()=>{const c=$("#top");if(c)openDrawer(c.dataset.id)};
 $("#sw-reset").onclick=()=>{skipped.clear();persist();renderDeck()};
+
+/* scholarships */
+let SCH=[];
+const sst={country:ls.get("idub-country","IE"),q:"",level:"",cat:new Set(),hide:false,abroad:false};
+function schStatus(x){
+  const op=parse(x.opens),dl=parse(x.deadline);
+  if(op&&op>TODAY)return{k:"soonopen",label:"Opens "+fmt(op),bg:"#ebe5fd",rank:1,when:op};
+  if(dl){const d=Math.round((dl-TODAY)/DAY);
+    if(d<0)return{k:"closed",label:"Closed · next "+(x.nextRound||"TBC"),bg:"#ece7df",rank:4,when:dl};
+    if(d<=14)return{k:"soon",label:d===0?"Closes today":"Closes in "+d+"d",bg:"#ffd0c8",rank:0,when:dl};
+    return{k:"open",label:"Closes "+fmt(dl),bg:"#d9f5e8",rank:1,when:dl};}
+  return{k:"tbc",label:"Dates TBC · next "+(x.nextRound||"check site"),bg:"#fff3c7",rank:3};
+}
+function schMatch(x,skipCat){
+  if(x.country!==sst.country)return false;
+  if(sst.level&&x.level!==sst.level&&x.level!=="Both")return false;
+  if(!skipCat&&sst.cat.size&&!sst.cat.has(x.category))return false;
+  if(sst.hide&&schStatus(x).k==="closed")return false;
+  if(sst.abroad&&x.country==="ES"&&x.abroadOK==="no")return false;
+  if(sst.q){const h=(x.name+" "+x.provider+" "+x.category+" "+x.who+" "+(x.notes||"")+" "+x.amount).toLowerCase();if(!sst.q.toLowerCase().split(/\s+/).every(w=>h.includes(w)))return false}
+  return true;
+}
+function renderSch(){
+  ["IE","ES"].forEach(c=>{$("#n-"+c).textContent=SCH.filter(x=>x.country===c).length});
+  document.querySelectorAll(".ctab").forEach(b=>b.classList.toggle("on",b.dataset.country===sst.country));
+  $("#abroadWrap").hidden=sst.country!=="ES";
+  const cats=[...new Set(SCH.filter(x=>x.country===sst.country).map(x=>x.category))].sort();
+  [...sst.cat].forEach(c=>{if(!cats.includes(c))sst.cat.delete(c)});
+  $("#schCats").innerHTML=`<button class="fchip ${sst.cat.size?"":"on"}" data-cat="" type="button">All</button>`+cats.map(c=>{const n=SCH.filter(x=>schMatch(x,true)&&x.category===c).length;return `<button class="fchip ${sst.cat.has(c)?"on":""}" data-cat="${esc(c)}" type="button">${esc(c)} · ${n}</button>`}).join("");
+  const rows=SCH.filter(x=>schMatch(x)).map(x=>({x,s:schStatus(x)})).sort((a,b)=>a.s.rank-b.s.rank||((a.s.when||0)-(b.s.when||0))||a.x.name.localeCompare(b.x.name));
+  $("#sCount").textContent=rows.length+" shown";
+  const cc=sst.country==="IE"?"#d9f5e8":"#ffe9a8";
+  $("#schGrid").innerHTML=rows.length?rows.map(({x,s})=>`<article class="voucher ${s.k==="closed"?"closed":""}" style="--cc:${cc}"><div class="v-in">
+    <div class="v-top"><span class="v-prov">${esc(x.provider)}</span><span class="v-code">${x.country} · ${esc(x.level==="Both"?"UG/PG":x.level==="Undergraduate"?"UG":"PG")}</span></div>
+    <h3>${esc(x.name)}</h3>
+    <div class="v-amt">${esc(x.amount)}</div>
+    <div class="v-who"><span class="mono" style="font-size:11px;letter-spacing:.1em;color:var(--muted)">FOR · </span>${esc(x.who)}</div>
+    <div class="tags"><span class="tag fill" style="--tc:${cc}">${esc(x.category)}</span>${x.country==="ES"&&x.abroadOK==="yes"?'<span class="tag fill" style="--tc:#ebe5fd">usable abroad</span>':""}${x.country==="ES"&&x.abroadOK==="check"?'<span class="tag">check if usable abroad</span>':""}</div>
+    ${x.notes?`<div class="v-note">${esc(x.notes)}</div>`:""}
+    <div class="v-foot"><span class="v-st" style="background:${s.bg}">${esc(s.label)}</span><span class="v-links"><a class="src" href="${esc(x.sourceUrl)}" target="_blank" rel="noopener">via ${esc(x.source)}</a><a class="btn sm coral" href="${esc(x.applyUrl)}" target="_blank" rel="noopener">Official page ↗</a></span></div>
+  </div></article>`).join(""):`<div class="empty" style="grid-column:1/-1"><strong>No scholarships match.</strong>Clear a filter or try another word.</div>`;
+}
+document.addEventListener("click",ev=>{
+  const ct=ev.target.closest(".ctab");if(ct){sst.country=ct.dataset.country;ls.set("idub-country",sst.country);sst.cat.clear();renderSch();return}
+  const ch=ev.target.closest("[data-cat]");if(ch){const c=ch.dataset.cat;if(!c)sst.cat.clear();else sst.cat.has(c)?sst.cat.delete(c):sst.cat.add(c);renderSch()}
+});
+$("#sq").addEventListener("input",ev=>{sst.q=ev.target.value.trim();renderSch()});
+$("#slevel").addEventListener("change",ev=>{sst.level=ev.target.value;renderSch()});
+$("#sHide").addEventListener("change",ev=>{sst.hide=ev.target.checked;renderSch()});
+$("#sAbroad").addEventListener("change",ev=>{sst.abroad=ev.target.checked;renderSch()});
+fetch("scholarships.json",{cache:"no-store"}).then(r=>r.ok?r.json():{scholarships:[]}).then(d=>{SCH=d.scholarships||[];if(view==="scholarships")renderSch()}).catch(()=>{});
+
+
+/* hackathons */
+let HK=[];
+const hst={city:"",aud:"",confirmed:false};
+const MON=["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+function hkState(h){
+  const st=parse(h.start),en=parse(h.end)||st;
+  if(!st)return{k:"tbc",label:"Expected "+(h.expected||"TBC")};
+  if(en<TODAY)return{k:"past",label:"Happened "+fmt(st)};
+  if(st<=TODAY)return{k:"live",label:"Happening now"};
+  const d=Math.round((st-TODAY)/DAY);return{k:"soon",label:d===1?"Tomorrow":"In "+d+" days",d};
+}
+function hkMatch(h){
+  if(hst.city&&!h.city.includes(hst.city))return false;
+  if(hst.aud==="uni"&&!/University|students|Everyone/i.test(h.audience))return false;
+  if(hst.aud==="open"&&!/Everyone/i.test(h.audience))return false;
+  if(hst.confirmed&&!h.start)return false;
+  return true;
+}
+function hkCard(h){
+  const s=hkState(h),st=parse(h.start),en=parse(h.end);
+  const cal=st?`<div class="cal"><div class="m">${MON[st.getMonth()]}</div><div class="d">${st.getDate()}${en&&en.getDate()!==st.getDate()?"–"+en.getDate():""}</div><div class="r">${st.getFullYear()}</div></div>`
+             :`<div class="cal tbc"><div class="m">TBC</div><div class="d">${esc((h.expected||"soon").replace(/ 20\d\d/,""))}</div><div class="r">${esc((h.expected||"").match(/20\d\d/)?.[0]||"")}</div></div>`;
+  const bg=s.k==="live"?"var(--coral)":s.k==="soon"?(s.d<=14?"#ffd0c8":"#d9f5e8"):s.k==="tbc"?"#ebe5fd":"#ece7df";
+  return `<article class="hk ${s.k==="past"?"past":""}">${cal}
+   <div><h4>${esc(h.name)}</h4><div class="org">${esc(h.organiser)}</div>
+    <div class="meta">📍 ${esc(h.venue)} · ${esc(h.format)} · ${esc(h.audience)}</div>
+    <div class="tags">${h.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}${h.prize?`<span class="tag fill" style="--tc:var(--sun)">${esc(h.prize)}</span>`:""}${h.regDeadline&&parse(h.regDeadline)>=TODAY?`<span class="tag fill" style="--tc:#ffd0c8">register by ${esc(fmt(parse(h.regDeadline)))}</span>`:""}</div>
+    ${h.notes?`<div class="note">${esc(h.notes)}</div>`:""}</div>
+   <div class="hk-side"><span class="when" style="background:${bg}">${esc(s.label)}</span><a class="btn sm ${s.k==="past"?"":"coral"}" href="${esc(h.url)}" target="_blank" rel="noopener">${s.k==="past"?"Event page":"Details & sign-up"} ↗</a><a class="src" href="${esc(h.sourceUrl)}" target="_blank" rel="noopener">via ${esc(h.source)}</a></div></article>`;
+}
+function renderHack(){
+  const cities=[...new Set(HK.flatMap(h=>h.city.split(" + ")))].sort();
+  $("#hkFilters").innerHTML=`<button class="fchip ${hst.city?"":"on"}" data-hcity="" type="button">All of Ireland</button>`+cities.map(c=>`<button class="fchip ${hst.city===c?"on":""}" data-hcity="${esc(c)}" type="button">${esc(c)}</button>`).join("")
+   +`<span class="sep"></span><button class="fchip ${hst.aud===""?"on":""}" data-haud="" type="button">Anyone</button><button class="fchip ${hst.aud==="uni"?"on":""}" data-haud="uni" type="button">Uni students can join</button><button class="fchip ${hst.aud==="open"?"on":""}" data-haud="open" type="button">Open to everyone</button>`
+   +`<span class="sep"></span><label class="opt" style="font-size:14px"><input type="checkbox" id="hkConf" ${hst.confirmed?"checked":""}> Confirmed dates only</label>`;
+  const rows=HK.filter(hkMatch).map(h=>({h,s:hkState(h)}));
+  const up=rows.filter(r=>r.s.k==="soon"||r.s.k==="live").sort((a,b)=>parse(a.h.start)-parse(b.h.start));
+  const tbc=rows.filter(r=>r.s.k==="tbc");
+  const ord=t=>{const m=(t||"").match(/(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec)/);const y=+((t||"").match(/20\d\d/)||[2099])[0];const sm={Spring:3,Autumn:9}[(t||"").split(" ")[0]];return y*12+(m?["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].indexOf(m[1]):sm??11)};
+  tbc.sort((a,b)=>ord(a.h.expected)-ord(b.h.expected));
+  const past=rows.filter(r=>r.s.k==="past").sort((a,b)=>parse(b.h.start)-parse(a.h.start));
+  const nx=up[0];
+  $("#nextUp").innerHTML=nx?`<span class="eyebrow">Next up</span><b>${esc(nx.h.name)}</b><div class="cd">${nx.s.k==="live"?"LIVE NOW":String(nx.s.d).padStart(2,"0")+"d"}</div><span class="mono" style="font-size:12px;color:#cfcbe3">${esc(fmt(parse(nx.h.start)))} · ${esc(nx.h.city)}</span>`:`<span class="eyebrow">Next up</span><b>No confirmed dates</b><span class="mono" style="font-size:12px;color:#cfcbe3">Check expected events below</span>`;
+  let html="";
+  const groups={};up.forEach(r=>{const d=parse(r.h.start);const k=d.getFullYear()*12+d.getMonth();(groups[k]=groups[k]||[]).push(r)});
+  Object.keys(groups).sort((a,b)=>a-b).forEach(k=>{const d=new Date(Math.floor(k/12),k%12,1);html+=`<div class="month"><h3>${d.toLocaleDateString("en-IE",{month:"long"})} <em>${d.getFullYear()}</em></h3><span>${groups[k].length} event${groups[k].length>1?"s":""}</span></div><div class="hk-list">${groups[k].map(r=>hkCard(r.h)).join("")}</div>`});
+  if(tbc.length)html+=`<div class="month"><h3>Coming <em>back.</em></h3><span>${tbc.length} recurring events · dates TBC</span></div><div class="hk-list">${tbc.map(r=>hkCard(r.h)).join("")}</div>`;
+  if(!up.length&&!tbc.length)html=`<div class="empty"><strong>Nothing for that filter.</strong>Try "All of Ireland".</div>`;
+  if(past.length)html+=`<details class="past-box"><summary>Recently happened (${past.length}) · useful to know what comes back each year</summary><div class="hk-list">${past.map(r=>hkCard(r.h)).join("")}</div></details>`;
+  $("#hkBody").innerHTML=html;
+}
+document.addEventListener("click",ev=>{
+  const c=ev.target.closest("[data-hcity]");if(c){hst.city=c.dataset.hcity;renderHack();return}
+  const a=ev.target.closest("[data-haud]");if(a){hst.aud=a.dataset.haud;renderHack();return}
+});
+document.addEventListener("change",ev=>{if(ev.target.id==="hkConf"){hst.confirmed=ev.target.checked;renderHack()}});
+fetch("hackathons.json",{cache:"no-store"}).then(r=>r.ok?r.json():{hackathons:[]}).then(d=>{HK=d.hackathons||[];if(view==="hackathons")renderHack()}).catch(()=>{});
+
 window.addEventListener("hashchange",route);
 $("#year").value=st.year;
 tickClock();setInterval(tickClock,30000);
