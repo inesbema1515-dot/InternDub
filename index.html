@@ -161,6 +161,21 @@ aside.filters{background:var(--paper);border:var(--b);border-radius:22px;positio
 .empty{border:2px dashed var(--line);border-radius:20px;padding:40px;text-align:center;color:var(--muted)}
 .empty strong{display:block;font-family:var(--font-serif);font-style:italic;font-size:28px;color:var(--ink);font-weight:400}
 
+/* filter feedback */
+.fhint{font-family:var(--font-mono);font-size:11px;color:var(--muted);margin:6px 0 0}
+#emodeBox.off .opt{opacity:.45}
+.fsum{display:flex;flex-wrap:wrap;gap:8px;align-items:center;background:var(--paper);border:var(--b);border-radius:16px;padding:10px 14px;margin-bottom:14px;font-size:14px}
+.fsum b{font-family:var(--font-display);font-weight:800;letter-spacing:-.02em}
+.fsum .pill2{font-family:var(--font-mono);font-size:11.5px;border:1.2px solid var(--ink);border-radius:999px;padding:2px 9px}
+.fsum.flash{animation:flash .6s ease}
+@keyframes flash{0%{background:var(--sun)}100%{background:var(--paper)}}
+.results-wrap{position:relative;min-height:200px}
+.loader{position:absolute;inset:0;z-index:5;background:rgba(241,236,228,.78);backdrop-filter:blur(2px);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:70px;gap:12px;border-radius:20px;font-family:var(--font-mono);font-size:13px}
+.spin{width:42px;height:42px;border-radius:50%;border:4px solid var(--ink);border-top-color:var(--coral);border-right-color:var(--sun);animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.list.dim{opacity:.35;filter:grayscale(.4)}
+@media (prefers-reduced-motion: reduce){.spin{animation:none;border-top-color:var(--ink)}}
+
 /* other routes */
 .routes{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:40px}
 .route{background:var(--paper);border:var(--b);border-radius:20px;padding:18px}
@@ -433,7 +448,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
         <div class="fh"><strong>Filters</strong><button class="linkbtn" id="clear" type="button">reset</button></div>
         <div class="fg"><h3>Status</h3>
           <label class="opt"><input type="checkbox" id="hideClosed" checked> Hide closed roles</label>
-          <label class="opt"><input type="checkbox" id="eligOnly"> Only open to my year</label></div>
+</div>
+        <div class="fg" id="emodeBox"><h3>Who can apply</h3>
+          <label class="opt"><input type="radio" name="emode" value="strict"> Clearly open to my year</label>
+          <label class="opt"><input type="radio" name="emode" value="maybe" checked> Open to me + not stated</label>
+          <label class="opt"><input type="radio" name="emode" value="all"> Show every role</label>
+          <p class="fhint" id="emodeHint">Pick your year at the top to use this.</p></div>
         <div class="fg"><h3>Field</h3><div id="f-field"></div></div>
         <div class="fg"><h3>Type</h3><div id="f-type"></div></div>
         <div class="fg"><h3>Location</h3><div id="f-area"></div></div>
@@ -446,7 +466,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       </aside>
       <div>
         <div class="rh"><span class="count" id="count">–</span><button class="btn sm mfilter" id="openFilters" type="button">Filters</button></div>
-        <div class="list" id="list"></div>
+        <div class="fsum" id="fsum" hidden></div>
+        <div class="results-wrap" id="resultsWrap">
+          <div class="loader" id="loader" hidden><div class="spin" aria-hidden="true"></div><span>Filtering roles…</span></div>
+          <div class="list" id="list" aria-live="polite"></div>
+        </div>
         <div class="routes">
           <div class="route"><span class="eyebrow">Off-board</span><h4>Research with a lecturer</h4><p>Email staff whose work you like. Flexible dates, so May–June is realistic.</p></div>
           <div class="route"><span class="eyebrow">Off-board</span><h4>Startups</h4><p>Dogpatch Labs and NDRC companies hire interns without posting on big boards.</p></div>
@@ -565,7 +589,7 @@ const TILE=["#2fd09a","#b4a4f6","#ffd23f","#ff5a45","#9fd6ff","#ffb8a8","#d7f27a
 const tile=n=>{let h=0;for(const c of n)h=(h*31+c.charCodeAt(0))>>>0;return TILE[h%TILE.length]};
 const STAGES=[["saved","Saved","#fff3c7"],["applied","Applied","#ffe1dc"],["interview","Interview","#ebe5fd"],["offer","Offer","#d9f5e8"]];
 let DATA=[];
-const st={q:"",year:"",sort:"new",hideClosed:true,eligOnly:false,posted:"",quick:"",field:new Set(),type:new Set(),area:new Set(),source:new Set(),company:new Set()};
+const st={q:"",year:"",sort:"new",hideClosed:true,emode:"maybe",posted:"",quick:"",field:new Set(),type:new Set(),area:new Set(),source:new Set(),company:new Set()};
 const ls={get(k,d){try{const v=localStorage.getItem(k);return v?JSON.parse(v):d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
 let track=ls.get("idub-track",null);
 if(!track){track={};ls.get("dif-saved",[]).forEach(id=>track[id]="saved");ls.get("dif-applied",[]).forEach(id=>track[id]="applied")}
@@ -601,7 +625,7 @@ const isNew=l=>{const p=parse(l.posted);return p&&(TODAY-p)/DAY<=7};
 function match(l,skip){
   const s=status(l);
   if(st.hideClosed&&s.k==="closed")return false;
-  if(st.eligOnly&&st.year&&elig(l).k==="no")return false;
+  if(st.year){const ek=elig(l).k;if(st.emode==="strict"&&ek!=="yes")return false;if(st.emode==="maybe"&&ek==="no")return false}
   if(st.quick==="open"&&s.k==="closed")return false;
   if(st.quick==="new"&&!isNew(l))return false;
   if(st.quick==="soon"&&s.k!=="soon")return false;
@@ -616,8 +640,10 @@ function facet(key){
   const vals=[...new Set(DATA.map(l=>l[key]))].sort((a,b)=>key==="company"?a.localeCompare(b):(cnt[b]||0)-(cnt[a]||0)||a.localeCompare(b));
   el.innerHTML=vals.map((v,i)=>`<label class="opt" for="${key}-${i}"><input type="checkbox" id="${key}-${i}" data-k="${key}" value="${esc(v)}" ${st[key].has(v)?"checked":""}>${key==="field"?`<span class="dot" style="background:${fc(v)}"></span>`:""}${esc(v)}<span class="c">${cnt[v]||0}</span></label>`).join("");
 }
+const ERANK={yes:0,check:1,na:1,no:2};
 function sorted(rows){
   return rows.sort((a,b)=>{
+    if(st.year){const d=ERANK[elig(a).k]-ERANK[elig(b).k];if(d)return d}
     if(st.sort==="company")return a.company.localeCompare(b.company)||a.title.localeCompare(b.title);
     if(st.sort==="deadline"){const ca=status(a).k==="closed",cb=status(b).k==="closed";if(ca!==cb)return ca?1:-1;const v=l=>parse(l.deadline)?.getTime()??(l.deadline==="rolling"?9e15:9.1e15);return v(a)-v(b)}
     return(parse(b.posted)||0)-(parse(a.posted)||0);
@@ -643,6 +669,24 @@ function renderList(){
   const rows=sorted(DATA.filter(l=>match(l)));
   $("#count").textContent=rows.length+" role"+(rows.length===1?"":"s")+" on the board";
   $("#list").innerHTML=rows.length?rows.map(ticket).join(""):`<div class="empty"><strong>Nothing here yet.</strong>Reset a filter or try a broader word.</div>`;
+  renderSummary(rows);
+}
+const YEARNAME={"1":"1st years","2":"2nd years","3":"3rd years","4":"final years","5":"Master's/PhD students"};
+function renderSummary(rows){
+  const box=$("#fsum"),eb=$("#emodeBox");
+  eb.classList.toggle("off",!st.year);
+  eb.querySelectorAll("input").forEach(i=>i.disabled=!st.year);
+  $("#emodeHint").textContent=st.year?"Most listings don't say who can apply, so \"not stated\" roles are worth checking.":"Pick your year at the top to use this.";
+  if(!st.year){box.hidden=true;return}
+  const base=DATA.filter(l=>{const y=st.emode;st.emode="all";const ok=match(l);st.emode=y;return ok});
+  const yes=base.filter(l=>elig(l).k==="yes").length,chk=base.filter(l=>elig(l).k==="check").length,no=base.filter(l=>elig(l).k==="no").length;
+  const hidden=base.length-rows.length;
+  box.hidden=false;
+  box.innerHTML=`<span>Showing <b>${rows.length}</b> roles for <b>${YEARNAME[st.year]}</b>:</span>
+   <span class="pill2" style="background:#d9f5e8">${yes} clearly open to you</span>
+   <span class="pill2" style="background:#fff3c7">${chk} don't say who can apply</span>
+   <span class="pill2" style="background:#ffe1dc">${no} not your year${hidden?" · hidden":""}</span>`;
+  box.classList.remove("flash");void box.offsetWidth;box.classList.add("flash");
 }
 function renderScores(){
   const live=DATA.filter(l=>status(l).k!=="closed");
@@ -734,6 +778,13 @@ function route(){
   refresh(true);
   if(h==="list-top")$("#list-top").scrollIntoView();else if(view!=="explore")scrollTo(0,0);
 }
+let loadT=null;
+function refreshL(){
+  if(view!=="explore"){refresh();return}
+  $("#loader").hidden=false;$("#list").classList.add("dim");
+  clearTimeout(loadT);
+  loadT=setTimeout(()=>{refresh();$("#loader").hidden=true;$("#list").classList.remove("dim")},320);
+}
 function refresh(full){
   renderScores();
   if(view==="explore"){renderList();renderDeps()}
@@ -750,7 +801,7 @@ document.addEventListener("click",ev=>{
   const rm=t.closest("[data-rm]");if(rm){delete track[rm.dataset.rm];persist();refresh();return}
   const op=t.closest("[data-open]");if(op){openDrawer(op.dataset.open);return}
   const c=t.closest(".ticket");if(c){openDrawer(c.dataset.id);return}
-  const k=t.closest(".score");if(k){st.quick=st.quick===k.dataset.quick?"":k.dataset.quick;refresh();$("#list-top").scrollIntoView({behavior:"smooth"});return}
+  const k=t.closest(".score");if(k){st.quick=st.quick===k.dataset.quick?"":k.dataset.quick;refreshL();$("#list-top").scrollIntoView({behavior:"smooth"});return}
   if(t.id==="dbg"||t.closest("#d-x"))closeAll();
 });
 document.addEventListener("keydown",ev=>{
@@ -759,14 +810,13 @@ document.addEventListener("keydown",ev=>{
   if(view==="swipe"&&!$("#drawer").classList.contains("open")&&!/INPUT|SELECT/.test(document.activeElement.tagName)){
     if(ev.key==="ArrowRight")swipe(1);if(ev.key==="ArrowLeft")swipe(-1);if(ev.key==="ArrowUp"&&$("#top")){ev.preventDefault();openDrawer($("#top").dataset.id)}}
 });
-document.addEventListener("change",ev=>{const k=ev.target.dataset.k;if(k){ev.target.checked?st[k].add(ev.target.value):st[k].delete(ev.target.value);refresh()}if(ev.target.name==="posted"){st.posted=ev.target.value;refresh()}});
-$("#q").addEventListener("input",ev=>{st.q=ev.target.value.trim();refresh()});
-$("#year").addEventListener("change",ev=>{st.year=ev.target.value;ls.set("idub-year",st.year);refresh()});
-$("#sort").addEventListener("change",ev=>{st.sort=ev.target.value;refresh()});
-$("#hideClosed").addEventListener("change",ev=>{st.hideClosed=ev.target.checked;refresh()});
-$("#eligOnly").addEventListener("change",ev=>{st.eligOnly=ev.target.checked;refresh()});
+document.addEventListener("change",ev=>{const k=ev.target.dataset.k;if(k){ev.target.checked?st[k].add(ev.target.value):st[k].delete(ev.target.value);refreshL()}if(ev.target.name==="posted"){st.posted=ev.target.value;refreshL()}if(ev.target.name==="emode"){st.emode=ev.target.value;refreshL()}});
+$("#q").addEventListener("input",ev=>{st.q=ev.target.value.trim();refreshL()});
+$("#year").addEventListener("change",ev=>{st.year=ev.target.value;ls.set("idub-year",st.year);refreshL()});
+$("#sort").addEventListener("change",ev=>{st.sort=ev.target.value;refreshL()});
+$("#hideClosed").addEventListener("change",ev=>{st.hideClosed=ev.target.checked;refreshL()});
 $("#openFilters").addEventListener("click",()=>{$("#filters").classList.add("open");$("#dbg").classList.add("open")});
-$("#clear").addEventListener("click",()=>{["field","type","area","source","company"].forEach(k=>st[k].clear());Object.assign(st,{q:"",posted:"",quick:"",eligOnly:false,hideClosed:true});$("#q").value="";$("#eligOnly").checked=false;$("#hideClosed").checked=true;document.querySelector('input[name="posted"][value=""]').checked=true;refresh()});
+$("#clear").addEventListener("click",()=>{["field","type","area","source","company"].forEach(k=>st[k].clear());Object.assign(st,{q:"",posted:"",quick:"",emode:"maybe",hideClosed:true});$("#q").value="";$("#hideClosed").checked=true;document.querySelector('input[name="emode"][value="maybe"]').checked=true;document.querySelector('input[name="posted"][value=""]').checked=true;refreshL()});
 $("#sw-skip").onclick=()=>swipe(-1);$("#sw-save").onclick=()=>swipe(1);$("#sw-open").onclick=()=>{const c=$("#top");if(c)openDrawer(c.dataset.id)};
 $("#sw-reset").onclick=()=>{skipped.clear();persist();renderDeck()};
 
