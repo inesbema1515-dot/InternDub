@@ -1112,7 +1112,7 @@ fetch("listings.json",{cache:"no-store"}).then(r=>{if(!r.ok)throw new Error(r.st
   $("#trustN").textContent=DATA.length+" roles from "+comps+" companies, refreshed every morning. Free for students.";$("#clock").textContent=new Date().toLocaleTimeString("en-IE",{hour:"2-digit",minute:"2-digit",timeZone:"Europe/Dublin"})+" IST";
   $("#foot-upd").textContent="Last update "+(u?fmtY(u):"–");
   route();
-}).catch(err=>{console.error("LOAD",err);$("#syncTxt").textContent="Couldn't load listings";$("#list").innerHTML='<div class="empty"><b>The board didn\'t load</b>Refresh the page to try again.</div>'});
+}).catch(err=>{$("#syncTxt").textContent="Couldn't load listings";$("#list").innerHTML='<div class="empty"><b>The board didn\'t load</b>Refresh the page to try again.</div>'});
 fetch("scholarships.json",{cache:"no-store"}).then(r=>r.ok?r.json():{scholarships:[]}).then(d=>{SCH=d.scholarships||[];if(view==="scholarships")renderSch()}).catch(()=>{});
 fetch("hackathons.json",{cache:"no-store"}).then(r=>r.ok?r.json():{hackathons:[]}).then(d=>{HK=d.hackathons||[];if(view==="hackathons")renderHack()}).catch(()=>{});
 })();
