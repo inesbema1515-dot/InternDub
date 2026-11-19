@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-18T06:48:53Z",
- "count": 26,
+ "updated": "2026-11-19T06:55:00Z",
+ "count": 27,
  "hackathons": [
   {
    "id": "H001",
@@ -22,7 +22,7 @@
    "url": "https://www.eventbrite.ie/e/ey-student-pitch-perfect-innovate-build-pitch-tickets-2004316611941",
    "source": "Hackathon Hub",
    "sourceUrl": "https://hackathonhub.eu/hackathons/dublin",
-   "notes": "Student innovation and pitching challenge, starts 9:30am. Register on Eventbrite.",
+   "notes": "Student innovation and pitching challenge, today from 9:30am. Register on Eventbrite.",
    "status": "active",
    "posted": "2026-11-16"
   },
@@ -47,7 +47,7 @@
    "url": "https://www.cassini.eu/hackathons/ireland",
    "source": "CASSINI",
    "sourceUrl": "https://www.cassini.eu/hackathons/ireland",
-   "notes": "48 hours using EU space data on peace and resilience. No space background needed; open to EU citizens 18+.",
+   "notes": "48 hours using EU space data on peace and resilience. No space background needed; open to EU citizens 18+. Registration closes tomorrow, Fri 20 Nov.",
    "status": "active",
    "posted": "2026-11-16"
   },
@@ -624,6 +624,31 @@
    "notes": "Athlone's local NASA Space Apps event. Projects are considered for global awards in Jan 2027.",
    "status": "active",
    "posted": "2026-11-18"
+  },
+  {
+   "id": "H027",
+   "name": "Trinity Entrepreneurial Society StartUp Weekend: Hackathon",
+   "organiser": "Trinity Entrepreneurial Society",
+   "start": "2026-11-28",
+   "end": "2026-11-29",
+   "expected": null,
+   "city": "Dublin",
+   "venue": "The Liberties, Dublin 8",
+   "format": "In-person",
+   "audience": "Students; beginners welcome",
+   "tags": [
+    "Startups",
+    "AI",
+    "Developer tools"
+   ],
+   "prize": null,
+   "regDeadline": null,
+   "url": "https://luma.com/3hgofz45",
+   "source": "Hackathon Hub",
+   "sourceUrl": "https://hackathonhub.eu/events/trinity-entrepreneurial-society-s-startup-weekend-hackathon-dublin-2026",
+   "notes": "Two-day hackathon: network, form teams, brainstorm and build startup prototypes. Request to join on Luma (host approval needed). Applications open, no deadline listed.",
+   "status": "active",
+   "posted": "2026-11-19"
   }
  ]
 }

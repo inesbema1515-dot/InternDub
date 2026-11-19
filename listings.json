@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-18T06:48:53Z",
- "count": 103,
+ "updated": "2026-11-19T06:55:00Z",
+ "count": 106,
  "listings": [
   {
    "id": "L001",
@@ -419,7 +419,7 @@
    "applyUrl": "https://www.google.com/about/careers/applications/jobs/results/?location=Dublin%2C%20Ireland&employment_type=INTERN",
    "contact": "Careers / early-careers team via the apply page",
    "pay": null,
-   "notes": "One of the few big-company roles that can start in May. Some versions need a second language.",
+   "notes": "One of the few big-company roles that can start in May. Some versions need a second language. Closes tomorrow, Fri 20 Nov 2026.",
    "status": "active"
   },
   {
@@ -759,8 +759,8 @@
    "applyUrl": "https://search.jobs.barclays/job/dublin/international-corporate-banking-summer-internship-programme-2027-dublin/13015/100032501008",
    "contact": "Careers / early-careers team via the apply page",
    "pay": "€30,000/yr (pro rata)",
-   "notes": "Any degree discipline.",
-   "status": "active"
+   "notes": "Any degree discipline. Listed as closed on The Inroad (19 Nov 2026).",
+   "status": "removed"
   },
   {
    "id": "L039",
@@ -779,8 +779,8 @@
    "applyUrl": "https://search.jobs.barclays/job/dublin/global-transaction-banking-summer-internship-programme-2027-dublin/13015/100032500688",
    "contact": "Careers / early-careers team via the apply page",
    "pay": "€30,000–40,000/yr (pro rata)",
-   "notes": "Any degree discipline. Its sister programme closed 15 Sep — check it's still open.",
-   "status": "active"
+   "notes": "Any degree discipline. Its sister programme closed 15 Sep — check it's still open. Listed as closed on The Inroad (19 Nov 2026).",
+   "status": "removed"
   },
   {
    "id": "L040",
@@ -2060,6 +2060,66 @@
    "contact": "Careers / early-careers team via the apply page",
    "pay": "Paid (amount not published)",
    "notes": "Level 7–9 engineering or construction-related students graduating June 2027–June 2028.",
+   "status": "active"
+  },
+  {
+   "id": "L104",
+   "title": "QA Automation Test Engineering Intern",
+   "company": "Apple",
+   "field": "Software",
+   "type": "Off-cycle",
+   "area": "Dublin",
+   "duration": "6 months",
+   "eligibility": "unknown",
+   "deadline": null,
+   "opens": null,
+   "posted": "2026-11-19",
+   "source": "iAgora",
+   "sourceUrl": "https://www.iagora.com/work/en/offer/internship-ireland-engineering/6595626",
+   "applyUrl": "https://jobs.apple.com/",
+   "contact": "Careers / early-careers team via the apply page",
+   "pay": "€3,000 (as listed on iAgora; period not stated)",
+   "notes": "For students enrolled in a Bachelor's or Master's in CS, data science, information systems or similar. Python (or Java/Go/TypeScript) and basic SQL needed. Posted 18 Nov 2026; start date not stated.",
+   "status": "active"
+  },
+  {
+   "id": "L105",
+   "title": "IT Audit Summer Internship – Dublin 2027",
+   "company": "KPMG",
+   "field": "Consulting & Audit",
+   "type": "Summer",
+   "area": "Dublin City",
+   "duration": "Summer 2027",
+   "eligibility": "unknown",
+   "deadline": null,
+   "opens": null,
+   "posted": "2026-11-19",
+   "source": "The Inroad",
+   "sourceUrl": "https://www.the-inroad.com/summer-internships/ireland",
+   "applyUrl": "https://kpmgireland.avature.net/careers",
+   "contact": "Careers / early-careers team via the apply page",
+   "pay": null,
+   "notes": "Opened 18 Nov 2026. Tech-risk side of audit, a good fit for CS & Business students.",
+   "status": "active"
+  },
+  {
+   "id": "L106",
+   "title": "Network Development Engineer Intern (2027)",
+   "company": "Amazon (AWS)",
+   "field": "Engineering",
+   "type": "Summer",
+   "area": "Dublin",
+   "duration": "12 weeks · start June/July 2027",
+   "eligibility": "pen",
+   "deadline": null,
+   "opens": null,
+   "posted": "2026-11-19",
+   "source": "gradireland",
+   "sourceUrl": "https://gradireland.com/jobs/network-development-engineer-intern-258705",
+   "applyUrl": "https://gradireland.com/jobs/network-development-engineer-intern-258705",
+   "contact": "Careers / early-careers team via the apply page",
+   "pay": null,
+   "notes": "For Bachelor's/Master's students graduating in 2028. Needs Linux/Unix and scripting (Python, Perl or Shell); CCNA or networking knowledge is a plus. gradireland shows a closing date of 30/09/2027, which looks like a placeholder, so apply early.",
    "status": "active"
   }
  ]
