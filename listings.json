@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-19T06:55:00Z",
+ "updated": "2026-11-20T06:48:59Z",
  "count": 106,
  "listings": [
   {
@@ -379,8 +379,8 @@
    "applyUrl": "https://careers.salesforce.com/en/jobs/?search=intern&location=Dublin",
    "contact": "Careers / early-careers team via the apply page",
    "pay": null,
-   "notes": null,
-   "status": "active"
+   "notes": "The Inroad lists Salesforce Ireland intern roles as closed on 18 Nov 2026.",
+   "status": "removed"
   },
   {
    "id": "L020",
@@ -741,26 +741,6 @@
    "pay": null,
    "notes": null,
    "status": "active"
-  },
-  {
-   "id": "L038",
-   "title": "International Corporate Banking Summer Internship Programme 2027",
-   "company": "Barclays",
-   "field": "Finance",
-   "type": "Summer",
-   "area": "Dublin City",
-   "duration": "10 weeks",
-   "eligibility": "pen",
-   "deadline": "2026-09-15",
-   "opens": null,
-   "posted": "2026-09-01",
-   "source": "The Inroad",
-   "sourceUrl": "https://www.the-inroad.com/summer-internships/ireland",
-   "applyUrl": "https://search.jobs.barclays/job/dublin/international-corporate-banking-summer-internship-programme-2027-dublin/13015/100032501008",
-   "contact": "Careers / early-careers team via the apply page",
-   "pay": "€30,000/yr (pro rata)",
-   "notes": "Any degree discipline. Listed as closed on The Inroad (19 Nov 2026).",
-   "status": "removed"
   },
   {
    "id": "L039",
@@ -2120,6 +2100,26 @@
    "contact": "Careers / early-careers team via the apply page",
    "pay": null,
    "notes": "For Bachelor's/Master's students graduating in 2028. Needs Linux/Unix and scripting (Python, Perl or Shell); CCNA or networking knowledge is a plus. gradireland shows a closing date of 30/09/2027, which looks like a placeholder, so apply early.",
+   "status": "active"
+  },
+  {
+   "id": "L107",
+   "title": "Software Engineering Intern, Apple Services",
+   "company": "Apple",
+   "field": "Software",
+   "type": "Summer",
+   "area": "Dublin",
+   "duration": "2027 internship · length not stated",
+   "eligibility": "min2",
+   "deadline": null,
+   "opens": null,
+   "posted": "2026-11-20",
+   "source": "iAgora",
+   "sourceUrl": "https://www.iagora.com/work/en/offer/internship-ireland-it/6600521",
+   "applyUrl": "https://jobs.apple.com/en-ie/search?search=intern&location=ireland-IRL",
+   "contact": "Careers / early-careers team via the apply page",
+   "pay": null,
+   "notes": "Apple Services Engineering team, on-site at least 3 days a week. For Bachelor's/Master's students in CS, Software Engineering, Data Science or related, enrolled at a university in Ireland, with at least 2 years (4 semesters) of coursework completed. No visa or relocation support. Start date and deadline not stated.",
    "status": "active"
   }
  ]

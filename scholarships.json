@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-19T06:55:00Z",
- "count": 37,
+ "updated": "2026-11-20T06:48:59Z",
+ "count": 38,
  "scholarships": [
   {
    "id": "S001",
@@ -741,6 +741,26 @@
    "notes": "La convocatoria suele salir a finales de diciembre, con solicitud en enero (última edición: del 13 al 30 ene). Fechas 2027 aún sin publicar.",
    "status": "active",
    "posted": "2026-11-18"
+  },
+  {
+   "id": "S038",
+   "country": "ES",
+   "name": "Ayudas de movilidad Luisa de Medrano (SICUE)",
+   "provider": "Ministerio de Ciencia, Innovación y Universidades",
+   "level": "Undergraduate",
+   "category": "Mobility & Erasmus",
+   "amount": "900 €/mes (hasta 8.100 € curso completo; +500 € si origen/destino insular, Ceuta o Melilla)",
+   "who": "Estudiantes de grado presencial en universidad española con plaza SICUE 2026-27, ≥60 créditos superados, nota media ≥5 y matrícula de ≥30 créditos",
+   "deadline": "2026-12-17",
+   "opens": null,
+   "nextRound": "Otoño 2027",
+   "abroadOK": "no",
+   "applyUrl": "https://sede.ciencia.gob.es/",
+   "source": "BOE",
+   "sourceUrl": "https://boe.es/boe/dias/2026/11/17/pdfs/BOE-B-2026-37866.pdf",
+   "notes": "Primera convocatoria (curso 2026-27): 2.300 ayudas, 115 reservadas a estudiantes con discapacidad ≥33 %. Plazo: un mes desde el extracto en el BOE del 17 nov 2026 (hasta aprox. 17 dic). Se solicita en la sede electrónica del Ministerio con certificado de plaza SICUE, certificado académico, matrícula y empadronamiento. Solo para movilidad entre universidades españolas.",
+   "status": "active",
+   "posted": "2026-11-20"
   }
  ]
 }
