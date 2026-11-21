@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-20T06:48:59Z",
- "count": 27,
+ "updated": "2026-11-21T06:48:53Z",
+ "count": 29,
  "hackathons": [
   {
    "id": "H001",
@@ -649,6 +649,55 @@
    "notes": "Two-day hackathon: network, form teams, brainstorm and build startup prototypes. Request to join on Luma (host approval needed). Applications open, no deadline listed.",
    "status": "active",
    "posted": "2026-11-19"
+  },
+  {
+   "id": "H028",
+   "name": "Sustainability Hackathon (Drogheda)",
+   "organiser": "Give(a)Go",
+   "start": "2026-12-05",
+   "end": "2026-12-05",
+   "expected": null,
+   "city": "Drogheda",
+   "venue": "The Mill, Drogheda (exact address shared with approved guests)",
+   "format": "In-person",
+   "audience": "Builders and tinkerers; open to all",
+   "tags": [
+    "sustainability",
+    "build day"
+   ],
+   "prize": null,
+   "regDeadline": null,
+   "url": "https://luma.com/sustainability-drogheda",
+   "source": "Meetup / Luma",
+   "sourceUrl": "https://www.meetup.com/give-a-go/events/317212862/",
+   "notes": "One day, 11:00–17:00, ending with demos. Free but host-approved, limited places – register on Luma (a Meetup RSVP alone isn't enough). Free shuttle from Drogheda train station if requested at sign-up. No prizes listed.",
+   "status": "active",
+   "posted": "2026-11-21"
+  },
+  {
+   "id": "H029",
+   "name": "Advance Health Hackathon",
+   "organiser": "Trinity Entrepreneurship Hub (with Portal @ TCD, Open Incubator, DCU Innovate Catalyst)",
+   "start": null,
+   "end": null,
+   "expected": "Feb 2027",
+   "city": "Dublin",
+   "venue": "Portal, Trinity Business School, TCD",
+   "format": "In-person",
+   "audience": "Students from across Ireland, technical and non-technical (no coding needed)",
+   "tags": [
+    "health",
+    "medtech",
+    "student"
+   ],
+   "prize": null,
+   "regDeadline": null,
+   "url": "https://luma.com/mnjhtsic",
+   "source": "Luma",
+   "sourceUrl": "https://luma.com/mnjhtsic",
+   "notes": "2026 edition ran 27–28 Feb with a Demo Day on 14 Mar; teams usually 2 technical + 2 non-technical. A 2027 edition is expected but not announced – Feb 2027 is a guess based on last year.",
+   "status": "active",
+   "posted": "2026-11-21"
   }
  ]
 }
