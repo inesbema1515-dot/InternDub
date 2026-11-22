@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-21T06:48:53Z",
- "count": 38,
+ "updated": "2026-11-22T06:47:12Z",
+ "count": 39,
  "scholarships": [
   {
    "id": "S001",
@@ -761,6 +761,26 @@
    "notes": "Primera convocatoria (curso 2026-27): 2.300 ayudas, 115 reservadas a estudiantes con discapacidad ≥33 %. Plazo: un mes desde el extracto en el BOE del 17 nov 2026 (hasta aprox. 17 dic). Se solicita en la sede electrónica del Ministerio con certificado de plaza SICUE, certificado académico, matrícula y empadronamiento. Solo para movilidad entre universidades españolas.",
    "status": "active",
    "posted": "2026-11-20"
+  },
+  {
+   "id": "S039",
+   "country": "ES",
+   "name": "Becas de doctorado INPhINIT \"la Caixa\" (Incoming y Retaining)",
+   "provider": "Fundación \"la Caixa\"",
+   "level": "Postgraduate",
+   "category": "Research",
+   "amount": "Contrato de doctorado de hasta 4 años + gastos de investigación y matrícula (cuantía exacta en las bases)",
+   "who": "Doctorandos de cualquier nacionalidad sin tesis iniciada ni más de 4 años de actividad investigadora. Incoming: ≤12 meses en España/Portugal en los últimos 3 años, solo STEM. Retaining: >12 meses, cualquier disciplina, doctorado en universidad distinta a la del grado.",
+   "deadline": "2027-01-12",
+   "opens": null,
+   "nextRound": "Nov 2027",
+   "abroadOK": "no",
+   "applyUrl": "https://fundacionlacaixa.org/es/becas-doctorado-inphinit",
+   "source": "Crónica del Henares / Fundación \"la Caixa\"",
+   "sourceUrl": "https://www.cronicadelhenares.com/2026/11/becas-la-caixa-2027-posgrado-doctorado-plazos.html",
+   "notes": "30 becas Incoming (cierre 12 ene 2027, 14:00) y 30 Retaining (cierre 2 mar 2027, 14:00). El doctorado se realiza en España o Portugal.",
+   "status": "active",
+   "posted": "2026-11-22"
   }
  ]
 }
