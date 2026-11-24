@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-22T06:47:12Z",
- "count": 39,
+ "updated": "2026-11-24T07:30:00Z",
+ "count": 40,
  "scholarships": [
   {
    "id": "S001",
@@ -690,15 +690,15 @@
    "level": "Undergraduate",
    "category": "Research",
    "amount": "€3,500 stipend in each of two summers (research, then Leadership in Action), plus project and travel funding you can apply for",
-   "who": "Trinity undergraduates (check the application guide for which years can apply)",
-   "deadline": null,
+   "who": "Trinity undergraduates in 2nd year of a 4-year degree, or 2nd/3rd year of a 5-year degree or integrated master's",
+   "deadline": "2027-02-09",
    "opens": null,
-   "nextRound": "Early 2027",
+   "nextRound": "Nov 2027",
    "abroadOK": "na",
-   "applyUrl": "https://www.tcd.ie/careers/awards--bursaries/laidlaw-scholarship-programme/",
+   "applyUrl": "https://www.tcd.ie/careers/awards--bursaries/laidlaw-scholarship-programme/apply-now-2027/",
    "source": "TCD Careers",
-   "sourceUrl": "https://www.tcd.ie/careers/awards--bursaries/laidlaw-scholarship-programme/",
-   "notes": "Two summers: 6 weeks of your own research with a supervisor, then 6 weeks of leadership work with an international element, plus 7+ days of leadership training. Dates for the next round aren't published yet.",
+   "sourceUrl": "https://www.tcd.ie/careers/awards--bursaries/laidlaw-scholarship-programme/apply-now-2027/",
+   "notes": "2027 applications are OPEN until Tue 9 Feb 2027, 12 noon. 18-month programme: two 6-week full-time summer projects (research, then Leadership-in-Action) plus up to 7 days of in-person workshops in Dublin. You need a project proposal (self-defined with a supervisor, or one of two pre-defined projects), a leadership video, a Summer 2 proposal and the application form. You can only apply once. Students going on Erasmus can apply. Questions: employability@tcd.ie.",
    "status": "active",
    "posted": "2026-11-18"
   },
@@ -781,6 +781,26 @@
    "notes": "30 becas Incoming (cierre 12 ene 2027, 14:00) y 30 Retaining (cierre 2 mar 2027, 14:00). El doctorado se realiza en España o Portugal.",
    "status": "active",
    "posted": "2026-11-22"
+  },
+  {
+   "id": "S040",
+   "country": "IE",
+   "name": "Iveagh Fellowship Programme",
+   "provider": "Department of Foreign Affairs (via Trinity Careers Service)",
+   "level": "Both",
+   "category": "Work experience",
+   "amount": "€6,000 once an internship of 8+ weeks is secured and approved",
+   "who": "Irish citizens on an undergraduate or postgraduate (diploma/master's) programme at an Irish university, interested in international policy careers",
+   "deadline": null,
+   "opens": null,
+   "nextRound": "2027 (dates TBC by DFA)",
+   "abroadOK": "na",
+   "applyUrl": "https://www.tcd.ie/careers/awards--bursaries/",
+   "source": "TCD Careers",
+   "sourceUrl": "https://www.tcd.ie/careers/awards--bursaries/",
+   "notes": "The 2026 round hasn't been announced by DFA yet, and Trinity's dates are still to be confirmed. Funds an international-policy internship.",
+   "status": "active",
+   "posted": "2026-11-24"
   }
  ]
 }

@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-22T06:47:12Z",
- "count": 29,
+ "updated": "2026-11-24T07:30:00Z",
+ "count": 30,
  "hackathons": [
   {
    "id": "H001",
@@ -698,6 +698,31 @@
    "notes": "2026 edition ran 27–28 Feb with a Demo Day on 14 Mar; teams usually 2 technical + 2 non-technical. A 2027 edition is expected but not announced – Feb 2027 is a guess based on last year.",
    "status": "active",
    "posted": "2026-11-21"
+  },
+  {
+   "id": "H030",
+   "name": "Build It with Manus: The Dublin AI Hackathon (Manus Fellow Event)",
+   "organiser": "Practical AI / Manus Community",
+   "start": "2026-12-01",
+   "end": "2026-12-01",
+   "expected": null,
+   "city": "Dublin",
+   "venue": "Flux Studios D2, 4 Chatham Row, Dublin 2",
+   "format": "Hybrid",
+   "audience": "Business owners, entrepreneurs, anyone with an idea; no coding needed",
+   "tags": [
+    "AI",
+    "No-code",
+    "Startups"
+   ],
+   "prize": null,
+   "regDeadline": null,
+   "url": "https://luma.com/practical-wujo",
+   "source": "Hackathon Hub",
+   "sourceUrl": "https://hackathonhub.eu/events/manus-fellow-event-build-it-with-manus-the-dublin-ai-hackathon-dublin-2026",
+   "notes": "Hands-on build day: turn a business idea into a working prototype with Manus. Bring a laptop. In-person spots are limited (choose in-person or virtual when registering) and registration needs host approval. Start time not listed.",
+   "status": "active",
+   "posted": "2026-11-24"
   }
  ]
 }
