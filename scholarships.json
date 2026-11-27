@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-26T06:48:41Z",
+ "updated": "2026-11-27T06:46:32Z",
  "count": 40,
  "scholarships": [
   {
@@ -471,14 +471,14 @@
    "category": "Postgraduate abroad",
    "amount": "Máster o doctorado presencial",
    "who": "Titulados superiores españoles",
-   "deadline": "2026-02-23",
-   "opens": null,
-   "nextRound": "Ene 2027",
+   "deadline": null,
+   "opens": "2027-01-11",
+   "nextRound": "Ene 2028",
    "abroadOK": "check",
    "applyUrl": "https://frdelpino.es/",
-   "source": "UC3M",
-   "sourceUrl": "https://www.uc3m.es/ss/Satellite/UC3MInstitucional/en/Detalle/Ficha_C/1371462340102/1371258853556/Becas_de_excelencia_Fundacion_Rafael_del_Pino_para_estudios_de_postgrado",
-   "notes": "Última convocatoria: 9 ene–23 feb 2026.",
+   "source": "Fundación Rafael del Pino",
+   "sourceUrl": "https://frdelpino.es/en_gb/scholarship/convocatoria-becas-de-excelencia-rafael-del-pino/",
+   "notes": "La web de la Fundación anuncia la próxima convocatoria para el 11 ene 2027; la fecha de cierre aún no se ha publicado (la anterior fue 9 ene–23 feb 2026).",
    "status": "active",
    "posted": "2026-11-16"
   },
