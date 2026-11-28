@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-27T06:46:32Z",
- "count": 31,
+ "updated": "2026-11-28T06:46:41Z",
+ "count": 32,
  "hackathons": [
   {
    "id": "H001",
@@ -748,6 +748,31 @@
    "notes": "10:00–14:00. Beginner Capture the Flag: cryptography, web exploitation, forensics, reverse engineering and OSINT. Bring at least two charged laptops per team. Free lunch. Places are limited and booked through Eventbrite. Aimed at schools, so mainly useful for anyone volunteering or mentoring.",
    "status": "active",
    "posted": "2026-11-25"
+  },
+  {
+   "id": "H032",
+   "name": "Dublin Hackathon with Practical AI and Softr",
+   "organiser": "Practical AI (Francisco Opazo, Matthew Hughes), presented by Softr",
+   "start": "2026-12-01",
+   "end": "2026-12-01",
+   "expected": null,
+   "city": "Dublin",
+   "venue": "Flux Studios D2, 4 Chatham Row, Dublin 2",
+   "format": "Hybrid",
+   "audience": "Beginners welcome: business owners, freelancers, marketers, students and experienced builders",
+   "tags": [
+    "AI",
+    "No-code",
+    "Beginners"
+   ],
+   "prize": null,
+   "regDeadline": null,
+   "url": "https://luma.com/pai-softr01",
+   "source": "Luma / allai.events",
+   "sourceUrl": "https://allai.events/event/dublin-hackathon-with-practical-ai-and-softr",
+   "notes": "18:00–21:00. Three-hour hands-on build session using AI and Softr. Only 16 in-person places, and in-person tickets need host approval; a virtual ticket is also available. No prizes mentioned.",
+   "status": "active",
+   "posted": "2026-11-28"
   }
  ]
 }

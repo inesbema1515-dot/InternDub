@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-27T06:46:32Z",
- "count": 40,
+ "updated": "2026-11-28T06:46:41Z",
+ "count": 41,
  "scholarships": [
   {
    "id": "S001",
@@ -801,6 +801,26 @@
    "notes": "The 2026 round hasn't been announced by DFA yet, and Trinity's dates are still to be confirmed. Funds an international-policy internship.",
    "status": "active",
    "posted": "2026-11-24"
+  },
+  {
+   "id": "S041",
+   "country": "ES",
+   "name": "Becas Fulbright de máster y doctorado en EE. UU. (Programa propio)",
+   "provider": "Comisión Fulbright España",
+   "level": "Postgraduate",
+   "category": "Postgraduate abroad",
+   "amount": "Viaje e instalación $1.300; hasta $4.300/mes; matrícula $35.000–40.000/año; seguro médico (convocatoria 2027-28)",
+   "who": "Españoles con título superior (obtenido entre ene 2019 y sep 2026 en la última convocatoria) que quieran hacer un máster o doctorado en EE. UU.; TOEFL iBT ≥97, IELTS ≥7 o Duolingo ≥125",
+   "deadline": "2026-04-14",
+   "opens": null,
+   "nextRound": "Ene–Abr 2027",
+   "abroadOK": "check",
+   "applyUrl": "https://fulbright.es/programas-y-becas/becas-para-espanoles",
+   "source": "Aprendemas / fulbright.es",
+   "sourceUrl": "https://www.aprendemas.com/es/blog/becas/fulbright-abre-sus-becas-estrella-en-ee-uu-para-jovenes-espanoles-que-quieran-dar-el-gran-salto-195669",
+   "notes": "La convocatoria para el curso 2027-28 cerró el 14 abr 2026. La del curso 2028-29 aún no está publicada (fechas e importes por confirmar). Comprueba en fulbright.es si aceptan títulos de universidades no españolas. Fulbright también tiene sesiones informativas.",
+   "status": "active",
+   "posted": "2026-11-28"
   }
  ]
 }
